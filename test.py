@@ -22,8 +22,11 @@ def down_html(url):
         print 'Name = '+item.name
         print 'Value = '+item.value
     print '------'
-    print response.read()
+    html = response.read()
+    fo = open('log/login_page.html', 'w')
+    fo.write(html)
+    fo.close()
 
 
 if __name__ == '__main__':
-    down_html('https://www.pixiv.net/')
+    down_html('https://accounts.pixiv.net/login?return_to=https%3A%2F%2Fwww.pixiv.net%2F&lang=zh&source=pc&view_type=page')
